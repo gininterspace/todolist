@@ -1,0 +1,13 @@
+
+<div class="task-detail" *ngIf="task_selected">
+  <div>
+    <div></div>
+  </div>
+  <h4>Task detail</h4>
+  <p>{{task_selected.id}}</p>
+  <h2>{{task_selected.name}}</h2>
+  <p>{{task_selected.desc}}</p>
+  <p>{{task_selected.created | date}}</p>
+  <p>{{task_selected.deadline | date}}</p>
+  <p>{{task_selected.status}}</p>
+</div>
