@@ -5,6 +5,7 @@ import {Component, Input, OnInit} from "@angular/core";
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import {Task} from "../ts/task";
+import {TaskService} from "../services/task.service";
 
 @Component({
   selector: "task-detail",
@@ -13,7 +14,16 @@ import {Task} from "../ts/task";
 })
 
 
-export class TaskDetailComponent {
+export class TaskDetailComponent  implements OnInit{
   @Input() task_selected : Task;
+  constructor(
+    private taskService: TaskService,
+    private route: ActivatedRoute,
+    private location: Location
+  ){}
+
+  ngOnInit():void{
+
+  }
 
 }

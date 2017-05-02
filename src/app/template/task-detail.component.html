@@ -10,4 +10,5 @@
   <p>{{task_selected.created | date}}</p>
   <p>{{task_selected.deadline | date}}</p>
   <p>{{task_selected.status}}</p>
+  <a [routerLink]="['edit/',task_selected.id]">edit</a>
 </div>

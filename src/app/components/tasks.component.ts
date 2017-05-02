@@ -13,7 +13,7 @@ import {TaskService} from "../services/task.service";
 })
 export class TasksComponent implements OnInit{
   private tasks:Task[];
-  private taskSelected;taskDeleted;
+  private taskSelected;
   private currentCSSClasses:{};
   constructor(private taskService:TaskService){}
   ngOnInit():Promise<Task[]>{
