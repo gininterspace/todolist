@@ -4,13 +4,14 @@
 import {Component, Input, OnInit} from "@angular/core";
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
-import {Task} from "../ts/task";
-import {TaskService} from "../services/task.service";
+import {Task} from "../task";
+import {TaskService} from "../task.service";
+import {} from "";
 
 @Component({
   selector: "task-detail",
-  templateUrl: "../template/task-detail.component.html",
-  styleUrls: ["../assets/css/task-detail.component.css"]
+  templateUrl: "./task-detail.component.html",
+  styleUrls: ["../../assets/css/task-detail.component.css"]
 })
 
 

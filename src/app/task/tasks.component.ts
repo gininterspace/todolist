@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {Task} from "../ts/task";
-import {TaskService} from "../services/task.service";
+import {Task} from "./task";
+import {TaskService} from "./task.service";
 /**
  * Created by n_ngo on 2017/05/02.
  */
@@ -8,7 +8,7 @@ import {TaskService} from "../services/task.service";
 
 @Component({
   selector: "my-tasks",
-  templateUrl: "../template/tasks.component.html",
+  templateUrl: "./tasks.component.html",
   styleUrls: ["../assets/css/tasks.component.css"]
 })
 export class TasksComponent implements OnInit{

@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {Hero} from "../ts/heroes";
-import {HeroService} from "../services/hero.service";
+import {Task} from "../task/task";
+import {TaskService} from "../task/task.service";
 /**
  * Created by n_ngo on 2017/05/01.
  */
@@ -10,11 +10,11 @@ import {HeroService} from "../services/hero.service";
   templateUrl: "../template/dashboard.component.html"
 })
 export class DashBoardComponent implements OnInit{
-  heroes: Hero[];
-  constructor (private heroService: HeroService){}
+  task:Task[];
+  constructor (private taskService: TaskService){}
 
   ngOnInit():void{
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice(0,4));
+    this.taskService.getTasks().then(tasks => this.task = tasks.slice(0,4));
   }
 
 

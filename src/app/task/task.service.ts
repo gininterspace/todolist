@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {Task} from "../ts/task";
+import {Task} from "./task";
+import 'rxjs/add/operator/toPromise';
 /**
  * Created by n_ngo on 2017/05/02.
  */
@@ -17,6 +18,5 @@ export class TaskService{
     const url = `${this.taskUrl}/${id}`;
     return this.http.get(url).toPromise().then(response =>response.json().data as Task);
   }
-
 
 }
