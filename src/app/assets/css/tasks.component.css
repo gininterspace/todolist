@@ -1,5 +1,5 @@
 .selected{
-  background-color: #1d1d1d !important;
+  background-color: #dedede !important;
   color: #fff !important;
 }
 .tasks-show{
@@ -9,7 +9,7 @@
 .task-list{
   background-color: #fff;
   color: #000;
-  border: 1px solid #1d1d1d;
+  border: 1px solid #dedede;
   cursor: pointer;
   padding:5px 10px;
   margin: 1px 0;
@@ -21,7 +21,7 @@
   transition: ease .3s;
 }
 .task-list:hover{
-  background-color: #1d1d1d;
+  background-color: #dedede;
   color: #fff;
 }
 .t-delete{
@@ -30,4 +30,11 @@
 }
 .t-done{
   text-decoration: line-through;
+  color: #22dd88;
+}
+
+@media screen and(max-width: 767px) {
+.task-detail{
+  padding: 0!important;
+}
 }

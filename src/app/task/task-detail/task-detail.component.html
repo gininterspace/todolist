@@ -1,14 +1,11 @@
-
-<div class="task-detail" *ngIf="task_selected">
-  <div>
-    <div></div>
-  </div>
+<div class="task-detail form-group" *ngIf="task_selected">
   <h4>Task detail</h4>
-  <p>{{task_selected.id}}</p>
-  <h2>{{task_selected.name}}</h2>
-  <p>{{task_selected.desc}}</p>
-  <p>{{task_selected.created | date}}</p>
-  <p>{{task_selected.deadline | date}}</p>
-  <p>{{task_selected.status}}</p>
-  <a [routerLink]="['edit/',task_selected.id]">edit</a>
+  <div class="task-row" id="status" ><span  class="task-header">Status</span> {{ taskStatus.status[task_selected.status] }}</div>
+  <div class="task-row" id="priority" ><span  class="task-header">Priority</span> {{taskPriority.priority[task_selected.priority] }}</div>
+  <div class="task-row" id="id" ><span  class="task-header">Task Id</span> {{task_selected.id}}</div>
+  <div class="task-row" id="name" ><span  class="task-header">Name</span> {{task_selected.name}}</div>
+  <div class="task-row" id="desc" ><span  class="task-header">Description</span> {{task_selected.desc}}</div>
+  <div class="task-row" id="created" ><span  class="task-header">Created</span> {{task_selected.created | date}}</div>
+  <div class="task-row" id="deadline" ><span  class="task-header">Deadline</span> {{task_selected.deadline | date}}</div>
+  <div class="task-row" id="edit" > <a [routerLink]="['edit/',task_selected.id]">Edit</a></div>
 </div>

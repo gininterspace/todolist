@@ -6,7 +6,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import {Task} from "../task";
 import {TaskService} from "../task.service";
-import {} from "";
+import {TaskStatus} from "../../ts/status";
+import {TaskPriority} from "../../ts/priority";
 
 @Component({
   selector: "task-detail",
@@ -20,11 +21,12 @@ export class TaskDetailComponent  implements OnInit{
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private taskStatus: TaskStatus,
+    private taskPriority: TaskPriority,
   ){}
 
   ngOnInit():void{
-
   }
 
 }

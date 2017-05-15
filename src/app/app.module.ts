@@ -13,6 +13,9 @@ import {AppRoutingModule} from "./modules/app-routing.module";
 import {TasksComponent} from "./task/tasks.component";
 import {TaskService} from "./task/task.service";
 import {TaskDetailComponent} from "./task/task-detail/task-detail.component";
+import {TaskStatus} from "./ts/status";
+import {TaskPriority} from "./ts/priority";
+import {TaskEditComponent} from "./task/task-edit/task-edit.component";
 
 
 
@@ -27,9 +30,10 @@ import {TaskDetailComponent} from "./task/task-detail/task-detail.component";
   declarations: [
     AppComponent,
     TasksComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    TaskEditComponent
   ],
-  providers: [TaskService],
+  providers:[TaskService,TaskStatus,TaskPriority],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
