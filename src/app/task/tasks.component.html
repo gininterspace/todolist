@@ -7,9 +7,14 @@
             (click)="taskClick(task)">
         <div ><span [class.t-done]="task.status !== 1">{{task.name}}</span> <span (click)="taskDone(task)"  [class.t-delete]="true">x</span></div>
       </div>
+      <div >
+        <a [routerLink]="['/add/']">Add Task</a>
+      </div>
     </div>
     <div class="col-sm-6 task-detail">
       <task-detail [task_selected]="taskSelected"></task-detail>
     </div>
+
   </div>
+
 </div>

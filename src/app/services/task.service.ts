@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http} from "@angular/http";
-import {Task} from "./task";
+import {Task} from "../task/task";
 import 'rxjs/add/operator/toPromise';
 /**
  * Created by n_ngo on 2017/05/02.
@@ -24,8 +24,7 @@ export class TaskService{
     return this.http.put(url, JSON.stringify(task),{headers: this.headers} ).toPromise().then(()=>task)
   }
   create(task:Task):Promise<Task>{
-    return this.http.put(this.taskUrl, JSON.stringify(task), {headers: this.headers}).toPromise()
-      .then(res => res.json().data as Task);
+    return this.http.post(this.taskUrl, JSON.stringify(task),{headers: this.headers} ).toPromise().then(()=>task)
   }
   getTaskFast(id:number):Promise<Task>{
     return this.getTasks().then(tasks => tasks.find(task => task.id === id));

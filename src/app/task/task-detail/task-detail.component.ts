@@ -5,9 +5,9 @@ import {Component, Input, OnInit} from "@angular/core";
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import {Task} from "../task";
-import {TaskService} from "../task.service";
+import {TaskService} from "../../services/task.service";
 import {TaskStatus} from "../../ts/status";
-import {TaskPriority} from "../../ts/priority";
+import {TaskPriorities, TaskPriority} from "../../ts/priority";
 
 @Component({
   selector: "task-detail",
@@ -18,15 +18,17 @@ import {TaskPriority} from "../../ts/priority";
 
 export class TaskDetailComponent  implements OnInit{
   @Input() task_selected : Task;
+  taskStatus = [];
+  taskPriority;
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
     private location: Location,
-    private taskStatus: TaskStatus,
-    private taskPriority: TaskPriority,
-  ){}
+  ){
+    this.taskStatus = TaskStatus;
+    this.taskPriority = TaskPriorities;
+  }
 
   ngOnInit():void{
   }
-
 }

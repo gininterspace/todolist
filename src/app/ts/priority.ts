@@ -1,9 +1,14 @@
-/**
- * Created by n_ngo on 2017/05/15.
- */
-/**
- * Created by n_ngo on 2017/05/02.
- */
-export class TaskPriority{
-  public priority:{}={1:"Emergency",2:"High", 3:"Normal", 4:"Low"}
+
+export enum TaskPriority{
+  "Emergency","High", "Normal", "Low"
 }
+export const TaskPriorities: (number|string)[] = [
+  TaskPriority[TaskPriority.Emergency],
+  TaskPriority[TaskPriority.High],
+  TaskPriority[TaskPriority.Normal],
+  TaskPriority[TaskPriority.Low],
+
+]
+
+
+

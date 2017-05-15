@@ -1,7 +1,7 @@
 <div class="task-detail form-group" *ngIf="task_selected">
   <h4>Task detail</h4>
-  <div class="task-row" id="status" ><span  class="task-header">Status</span> {{ taskStatus.status[task_selected.status] }}</div>
-  <div class="task-row" id="priority" ><span  class="task-header">Priority</span> {{taskPriority.priority[task_selected.priority] }}</div>
+  <div class="task-row" id="status" ><span  class="task-header">Status</span> {{ taskStatus[task_selected.status] }}</div>
+  <div class="task-row" id="priority" ><span  class="task-header">Priority</span> {{taskPriority[task_selected.priority] }}</div>
   <div class="task-row" id="id" ><span  class="task-header">Task Id</span> {{task_selected.id}}</div>
   <div class="task-row" id="name" ><span  class="task-header">Name</span> {{task_selected.name}}</div>
   <div class="task-row" id="desc" ><span  class="task-header">Description</span> {{task_selected.desc}}</div>

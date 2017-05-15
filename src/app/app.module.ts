@@ -11,11 +11,11 @@ import {InMemoryDataService} from "./services/in-memory-data.service";
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./modules/app-routing.module";
 import {TasksComponent} from "./task/tasks.component";
-import {TaskService} from "./task/task.service";
+import {TaskService} from "./services/task.service";
 import {TaskDetailComponent} from "./task/task-detail/task-detail.component";
 import {TaskStatus} from "./ts/status";
-import {TaskPriority} from "./ts/priority";
 import {TaskEditComponent} from "./task/task-edit/task-edit.component";
+import {TaskAddComponent} from "./task/task-add/task-add.component";
 
 
 
@@ -31,9 +31,10 @@ import {TaskEditComponent} from "./task/task-edit/task-edit.component";
     AppComponent,
     TasksComponent,
     TaskDetailComponent,
-    TaskEditComponent
+    TaskEditComponent,
+    TaskAddComponent
   ],
-  providers:[TaskService,TaskStatus,TaskPriority],
+  providers:[TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
