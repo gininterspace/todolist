@@ -2,6 +2,7 @@
   margin-top: 15px;
   padding: 10px;
   border: 1px solid #1d1d1d;
+  position: relative;
 }
 
 .task-detail .task-row{
@@ -16,4 +17,34 @@
   display: inline-block;
   font-weight: bold;
   width: 110px;
+}
+a.task-btn{
+  display: inline-block;
+  color: #dedede;
+  border:1px solid #dedede;
+  background: #000;
+  padding: 8px 10px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.task-btn .fa{
+  font-size: 20px;
+}
+a.task-btn:hover{
+  background: #dedede;
+  color: #1d1d1d;
+  border:1px solid #1d1d1d;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  -ms-transition: ease .3s;
+  -o-transition: ease .3s;
+  transition: ease .3s;
+}
+.close-task{
+  position: absolute;
+  display: inline-block;
+  padding: 5px;
+  right:10px ;
+  top: 10px;
+  cursor: pointer;
 }

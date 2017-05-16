@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       },
       {
         id: 2,
@@ -22,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       },
       {
         id: 3,
@@ -31,7 +31,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       },
       {
         id: 4,
@@ -40,7 +40,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       },
       {
         id: 5,
@@ -49,7 +49,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       },
       {
         id: 6,
@@ -58,7 +58,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       },
       {
         id: 7,
@@ -67,7 +67,7 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 3,
       }
     ];
     return { tasks}

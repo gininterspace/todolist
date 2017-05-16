@@ -1,9 +1,11 @@
 import {Component, OnInit} from "@angular/core";
 import {Task} from "./task";
 import {TaskService} from "../services/task.service";
+import {TaskStatusEnum} from "../ts/status";
 /**
  * Created by n_ngo on 2017/05/02.
  */
+
 
 
 @Component({
@@ -15,10 +17,14 @@ export class TasksComponent implements OnInit{
   private tasks:Task[];
   private taskSelected;
   private currentCSSClasses:{};
-  constructor(private taskService:TaskService){}
+  private taskStatus;
+  constructor(private taskService:TaskService){
+    this.taskStatus = TaskStatusEnum;
+  }
   ngOnInit():Promise<Task[]>{
     this.setCSSClasses();
     return this.taskService.getTasks().then(tasks => this.tasks = tasks);
+
   }
   taskClick(task:Task):void{
     this.taskSelected = task;
@@ -28,15 +34,20 @@ export class TasksComponent implements OnInit{
       "task-list":true
     };
   }
-  taskDone(task:Task):void{
+  changeStatus(task:Task):void{
     let index:number = 0;
     for (let t of this.tasks){
       if(t===task){
         if(task.status == 1)
+        {
           task.status = 0;
+          this.taskService.update(task).then();
+        }
         else
+        {
           task.status = 1;
-        this.tasks[index] = task;
+          this.tasks[index] = task;
+        }
       }
       index++;
     }

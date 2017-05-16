@@ -5,10 +5,12 @@ export enum TaskStatusEnum {
   done,
   processing,
   cancel,
+  waiting
 }
 export const TaskStatus:(string|number)[] = [
   TaskStatusEnum[TaskStatusEnum.done],
   TaskStatusEnum[TaskStatusEnum.processing],
   TaskStatusEnum[TaskStatusEnum.cancel],
+  TaskStatusEnum[TaskStatusEnum.waiting],
 ];
 

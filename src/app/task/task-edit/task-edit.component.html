@@ -1,11 +1,19 @@
 <div class="task-detail form-group" *ngIf="task_editing">
   <h4>Task detail</h4>
-  <div class="task-row" id="status" ><span class="task-header">Status</span> {{ taskStatus[task_editing.status] }}</div>
-  <div class="task-row" id="priority" ><span class="task-header">Priority</span> {{taskPriority[task_editing.priority] }}</div>
-  <div class="task-row" id="id" ><span class="task-header">Task Id</span> {{task_editing.id}}</div>
-  <div class="task-row " id="name" ><span class="task-header">Name</span> <input class="form-control" [(ngModel)]="task_editing.name" placeholder="name" > </div>
-  <div class="task-row " id="desc" ><span class="task-header">Description</span> <textarea class="form-control" [(ngModel)]="task_editing.desc" placeholder="Description" ></textarea></div>
-  <div class="task-row" id="created" ><span class="task-header">Created</span> {{task_editing.created | date}}</div>
-  <div class="task-row" id="deadline" ><span class="task-header">Deadline</span> {{task_editing.deadline | date}}</div>
-  <div class="task-row" id="save" ><a (click)="save()">Save</a></div>
+  <div class="task-row" id="status" ><span class="task-header">Status</span>
+    <select class="select-tag" [(ngModel)]="task_editing.status">
+      <option *ngFor="let index of taskStatus" [ngValue]="status_index[index]">{{index}}</option>
+    </select>
+  </div>
+  <div class="task-row" id="priority" ><span class="task-header">Priority</span>
+    <select class="select-tag" [(ngModel)]="task_editing.priority">
+      <option *ngFor="let index of taskPriority" [value]="priority_index[index]" >{{index}}</option>
+    </select>
+  </div>
+  <div class="task-row" id="name" ><span class="task-header">Name</span> <input class="form-control" [(ngModel)]="task_editing.name" placeholder="name" > </div>
+  <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea class="form-control" [(ngModel)]="task_editing.desc" placeholder="Description" ></textarea></div>
+  <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>
+    <input   id="deadline_date_picker" value="{{task_editing.deadline | date}}">
+  </div>
+  <div class="task-row" id="save" ><a class="task-btn" (click)="save()">Save</a></div>
 </div>

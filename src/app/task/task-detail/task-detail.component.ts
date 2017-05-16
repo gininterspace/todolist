@@ -6,7 +6,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import {Task} from "../task";
 import {TaskService} from "../../services/task.service";
-import {TaskStatus} from "../../ts/status";
+import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 
 @Component({
@@ -20,6 +20,9 @@ export class TaskDetailComponent  implements OnInit{
   @Input() task_selected : Task;
   taskStatus = [];
   taskPriority;
+  private priority_index;
+  private status = [];
+  private status_index;
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
@@ -27,8 +30,12 @@ export class TaskDetailComponent  implements OnInit{
   ){
     this.taskStatus = TaskStatus;
     this.taskPriority = TaskPriorities;
+    this.priority_index = TaskPriority;
+    this.status_index = TaskStatusEnum;
   }
-
+  closeDetail(){
+      this.task_selected = null;
+  }
   ngOnInit():void{
   }
 }

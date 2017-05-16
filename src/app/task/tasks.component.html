@@ -2,13 +2,14 @@
   <div class="col-xs-12">
     <div class="col-sm-6 tasks-show" >
       <div  *ngFor="let task of tasks"
+            class="task-list task-status"
             [class.selected]="task===taskSelected"
-            [ngClass]="currentCSSClasses"
+            [class.t-done]="task.status === taskStatus.done"
             (click)="taskClick(task)">
-        <div ><span [class.t-done]="task.status !== 1">{{task.name}}</span> <span (click)="taskDone(task)"  [class.t-delete]="true">x</span></div>
+        {{task.name}}<span class="fa t-delete fa-check" (click)="changeStatus(task)" [class.yellow]="task.status === taskStatus.processing" [class.green]="task.status === taskStatus.done" [class.red]="task.status === taskStatus.cancel"></span>
       </div>
       <div >
-        <a [routerLink]="['/add/']">Add Task</a>
+        <a class="task-btn" [routerLink]="['/add/']">Add Task</a>
       </div>
     </div>
     <div class="col-sm-6 task-detail">

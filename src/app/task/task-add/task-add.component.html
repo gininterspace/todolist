@@ -1,15 +1,14 @@
 <div class="task-detail form-group" >
   <h4>Adding Task </h4>
   <div class="task-row" id="priority" ><span class="task-header">Priority</span>
-    <select [(ngModel)]="task_holder.priority" >
-      <option *ngFor="let index of priorities"  [ngValue]="priority_index[index]" >{{index}}</option>
+    <select class="select-tag" [(ngModel)]="task_holder.priority" >
+      <option *ngFor="let index of priorities"  [ngValue]="priority_index[index]"  >{{index}}</option>
     </select>
   </div>
   <div class="task-row" id="name" ><span class="task-header">Name</span> <input [(ngModel)]="task_holder.name" class="form-control" placeholder="name" > </div>
   <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea [(ngModel)]="task_holder.desc" class="form-control" placeholder="Description" ></textarea></div>
-  <div class="task-row" id="deadline" ><span class="task-header">Deadline</span> </div>
-  <div class="task-row" id="save" ><a (click)="addTask(task_holder)">Save</a></div>
+  <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>
+    <input  [(ngModel)]="task_holder.deadline"  id="deadline_date_picker">
+  </div>
+  <div class="task-row" id="save" ><a class="task-btn" (click)="addTask(task_holder)">Save</a></div>
 </div>
-<script>
-
-</script>
