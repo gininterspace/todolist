@@ -10,6 +10,11 @@
       <option *ngFor="let index of taskPriority" [value]="priority_index[index]" >{{index}}</option>
     </select>
   </div>
+  <div class="task-row" id="assignee" ><span class="task-header">Assignee</span>
+    <select class="select-tag" [(ngModel)]="task_editing.assignee">
+      <option *ngFor="let index of assignee_data" [value]="assignee_enum[index]" >{{index}}</option>
+    </select>
+  </div>
   <div class="task-row" id="name" ><span class="task-header">Name</span> <input class="form-control" [(ngModel)]="task_editing.name" placeholder="name" > </div>
   <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea class="form-control" [(ngModel)]="task_editing.desc" placeholder="Description" ></textarea></div>
   <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>

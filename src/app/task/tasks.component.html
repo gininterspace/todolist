@@ -17,5 +17,9 @@
     </div>
 
   </div>
+  <span (click)="toggleKanban()">toggle</span>
+  <div class="col-xs-12 kanban">
+    <kanban [data]="tasks"></kanban>
+  </div>
 
 </div>

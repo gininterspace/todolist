@@ -9,4 +9,5 @@ export class Task{
   deadline:number;
   priority:number;
   status:number;
+  assignee:number;
 }

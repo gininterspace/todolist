@@ -3,8 +3,8 @@ import {InMemoryDbService} from "angular-in-memory-web-api";
  * Created by n_ngo on 2017/05/02.
  */
 
-export class InMemoryDataService implements InMemoryDbService{
-  createDb(){
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
     let tasks = [
       {
         id: 1,
@@ -13,7 +13,8 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 3,
+        status: 1,
+        assignee: 1
       },
       {
         id: 2,
@@ -22,7 +23,8 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 3,
+        status: 1,
+        assignee: 1
       },
       {
         id: 3,
@@ -31,7 +33,8 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 3,
+        status: 2,
+        assignee: 1
       },
       {
         id: 4,
@@ -40,7 +43,8 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 3,
+        status: 1,
+        assignee: 1
       },
       {
         id: 5,
@@ -49,7 +53,8 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 3,
+        status: 1,
+        assignee: 1
       },
       {
         id: 6,
@@ -59,6 +64,7 @@ export class InMemoryDataService implements InMemoryDbService{
         deadline: Date.now(),
         priority: 1,
         status: 3,
+        assignee: 1
       },
       {
         id: 7,
@@ -67,10 +73,23 @@ export class InMemoryDataService implements InMemoryDbService{
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 3,
+        status: 1,
+        assignee: 1
       }
     ];
-    return { tasks}
+    let assignees = [
+      {
+        id: "1",
+        name: "Ngo Van Nguyen",
+        img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/747++%E3%82%B4%E3%83%BC%E3%83%B4%E3%82%A1%E3%83%B3+%E3%82%B0%E3%82%A3%E3%83%B3.JPG?uid=581&fid=716&mime=image%2Fjpeg&hash=&.JPG",
+      },
+      {
+        id: "2",
+        name: "Shimizu san",
+        img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/%E6%B8%85%E6%B0%B40685.jpg?uid=474&fid=545&mime=image%2Fjpeg&hash=&.jpg",
+      },
+    ];
+    return {tasks, assignees}
 
   }
 

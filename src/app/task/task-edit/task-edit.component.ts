@@ -6,6 +6,7 @@ import {Task} from "../task";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {Location} from "@angular/common";
+import {Assignee, AssigneeArray} from "../../ts/assignee";
 declare let $;
 
 @Component({
@@ -18,6 +19,8 @@ export class TaskEditComponent implements OnInit{
   private taskPriority = [];
   private priority_index;
   private status_index;
+  private assignee_data;
+  private assignee_enum;
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
@@ -27,6 +30,8 @@ export class TaskEditComponent implements OnInit{
     this.status_index = TaskStatusEnum;
     this.taskPriority = TaskPriorities;
     this.priority_index = TaskPriority;
+    this.assignee_data = AssigneeArray;
+    this.assignee_enum = Assignee;
 
 
   }

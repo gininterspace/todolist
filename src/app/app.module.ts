@@ -16,6 +16,8 @@ import {TaskDetailComponent} from "./task/task-detail/task-detail.component";
 import {TaskStatus} from "./ts/status";
 import {TaskEditComponent} from "./task/task-edit/task-edit.component";
 import {TaskAddComponent} from "./task/task-add/task-add.component";
+import {KanbanComponent} from "./task/kanban/kanban.component";
+import {AssigneeService} from "./services/assignee.service";
 
 
 
@@ -32,9 +34,10 @@ import {TaskAddComponent} from "./task/task-add/task-add.component";
     TasksComponent,
     TaskDetailComponent,
     TaskEditComponent,
-    TaskAddComponent
+    TaskAddComponent,
+    KanbanComponent
   ],
-  providers:[TaskService],
+  providers:[TaskService, AssigneeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
