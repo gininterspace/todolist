@@ -3,9 +3,11 @@
  */
 export enum Assignee{
   nguyen,
-  shimizu
+  shimizu,
+  nin
 }
 export const AssigneeArray = [
   Assignee[Assignee.nguyen],
   Assignee[Assignee.shimizu],
+  Assignee[Assignee.nin],
 ];

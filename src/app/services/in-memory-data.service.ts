@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 2,
         assignee: 1
       },
       {
@@ -24,7 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 1,
         status: 1,
-        assignee: 1
+        assignee: 0
       },
       {
         id: 3,
@@ -44,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 1,
         status: 1,
-        assignee: 1
+        assignee: 0
       },
       {
         id: 5,
@@ -74,7 +74,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 1,
         status: 1,
-        assignee: 1
+        assignee: 0
       }
     ];
     let assignees = [
@@ -87,6 +87,11 @@ export class InMemoryDataService implements InMemoryDbService {
         id: "2",
         name: "Shimizu san",
         img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/%E6%B8%85%E6%B0%B40685.jpg?uid=474&fid=545&mime=image%2Fjpeg&hash=&.jpg",
+      },
+      {
+        id: "3",
+        name: "任 恩光",
+        img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/%E4%BB%BB0600.jpg?uid=354&fid=376&mime=image%2Fjpeg&hash=&.jpg",
       },
     ];
     return {tasks, assignees}

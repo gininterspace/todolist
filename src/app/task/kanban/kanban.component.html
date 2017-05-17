@@ -1,6 +1,6 @@
 <div *ngIf="assignees_data">
   <div class="row" *ngIf="data">
-    <div class="col-sm-3">
+    <div class="col-sm-3 kanban-wrapper">
       <h3>To do</h3>
       <div *ngFor="let task of data">
         <div class="kanban-task-container" *ngIf="task.status === taskStatus.waiting">
@@ -13,7 +13,7 @@
 
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 kanban-wrapper">
       <h3>Doing</h3>
       <div *ngFor="let task of data">
         <div class="kanban-task-container" *ngIf="task.status === taskStatus.processing">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 kanban-wrapper">
       <h3>Reviewing</h3>
       <div *ngFor="let task of data">
         <div class="kanban-task-container" *ngIf="task.status === taskStatus.review">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 kanban-wrapper">
       <h3>Done</h3>
       <div *ngFor="let task of data">
         <div class="kanban-task-container" *ngIf="task.status === taskStatus.done">

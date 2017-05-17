@@ -8,6 +8,7 @@ import {Task} from "../task";
 import {TaskService} from "../../services/task.service";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
+import {AssigneeService} from "../../services/assignee.service";
 
 @Component({
   selector: "task-detail",
@@ -23,10 +24,12 @@ export class TaskDetailComponent  implements OnInit{
   private priority_index;
   private status = [];
   private status_index;
+  private assignee;
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
     private location: Location,
+    private assigneeService: AssigneeService
   ){
     this.taskStatus = TaskStatus;
     this.taskPriority = TaskPriorities;

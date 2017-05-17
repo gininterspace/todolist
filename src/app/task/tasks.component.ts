@@ -20,14 +20,16 @@ export class TasksComponent implements OnInit{
   private taskStatus;
   constructor(private taskService:TaskService){
     this.taskStatus = TaskStatusEnum;
+
   }
   ngOnInit():Promise<Task[]>{
+    $(".kanban").hide();
     this.setCSSClasses();
     return this.taskService.getTasks().then(tasks => this.tasks = tasks);
 
   }
   toggleKanban(){
-    $(".kanban").toggle();
+    $(".kanban").toggle("300");
   }
   taskClick(task:Task):void{
     this.taskSelected = task;

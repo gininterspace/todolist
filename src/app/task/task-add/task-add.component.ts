@@ -43,8 +43,6 @@ export class TaskAddComponent implements OnInit{
         data.status = this.status_index.waiting;
         data.created= Date.now();
         data.deadline = $("#deadline_date_picker").val();
-        data.assignee = this.assigneeEnum.nguyen;
-        console.log(data);
         this.taskService.create(data).then(()=>this.back());
       }
     }

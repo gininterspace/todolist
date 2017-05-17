@@ -4,6 +4,12 @@
     <select class="select-tag" [(ngModel)]="task_holder.priority" >
       <option *ngFor="let index of priorities"  [ngValue]="priority_index[index]"  >{{index}}</option>
     </select>
+
+  </div>
+  <div class="task-row"><span class="task-header">Assignee</span>
+    <select class="select-tag" [(ngModel)]="task_holder.assignee" >
+      <option *ngFor="let index of assignee"  [ngValue]="assigneeEnum[index]"  >{{index}}</option>
+    </select>
   </div>
   <div class="task-row" id="name" ><span class="task-header">Name</span> <input [(ngModel)]="task_holder.name" class="form-control" placeholder="name" > </div>
   <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea [(ngModel)]="task_holder.desc" class="form-control" placeholder="Description" ></textarea></div>

@@ -10,14 +10,13 @@
       </div>
       <div >
         <a class="task-btn" [routerLink]="['/add/']">Add Task</a>
+        <span class="task-btn start-kb-btn" (click)="toggleKanban()">Start up Kanban</span>
       </div>
     </div>
     <div class="col-sm-6 task-detail">
       <task-detail [task_selected]="taskSelected"></task-detail>
     </div>
-
   </div>
-  <span (click)="toggleKanban()">toggle</span>
   <div class="col-xs-12 kanban">
     <kanban [data]="tasks"></kanban>
   </div>
