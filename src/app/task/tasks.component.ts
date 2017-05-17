@@ -38,14 +38,14 @@ export class TasksComponent implements OnInit{
     let index:number = 0;
     for (let t of this.tasks){
       if(t===task){
-        if(task.status == 1)
+        if(task.status == this.taskStatus.processing)
         {
-          task.status = 0;
+          task.status = this.taskStatus.done;
           this.taskService.update(task).then();
         }
         else
         {
-          task.status = 1;
+          task.status = this.taskStatus.processing;
           this.tasks[index] = task;
         }
       }
