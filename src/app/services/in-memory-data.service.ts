@@ -22,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
         desc: "take a box and leave ",
         created: Date.now(),
         deadline: Date.now(),
-        priority: 1,
+        priority: 2,
         status: 1,
         assignee: 0
       },
@@ -32,7 +32,7 @@ export class InMemoryDataService implements InMemoryDbService {
         desc: "take a table and leave ",
         created: Date.now(),
         deadline: Date.now(),
-        priority: 1,
+        priority: 3,
         status: 2,
         assignee: 1
       },
@@ -42,7 +42,7 @@ export class InMemoryDataService implements InMemoryDbService {
         desc: "take a chair and leave ",
         created: Date.now(),
         deadline: Date.now(),
-        priority: 1,
+        priority: 0,
         status: 1,
         assignee: 0
       },
@@ -53,7 +53,7 @@ export class InMemoryDataService implements InMemoryDbService {
         created: Date.now(),
         deadline: Date.now(),
         priority: 1,
-        status: 1,
+        status: 4,
         assignee: 1
       },
       {
@@ -62,7 +62,7 @@ export class InMemoryDataService implements InMemoryDbService {
         desc: "write code",
         created: Date.now(),
         deadline: Date.now(),
-        priority: 1,
+        priority: 2,
         status: 3,
         assignee: 1
       },
@@ -72,7 +72,7 @@ export class InMemoryDataService implements InMemoryDbService {
         desc: "fux big and leave ",
         created: Date.now(),
         deadline: Date.now(),
-        priority: 1,
+        priority: 3,
         status: 1,
         assignee: 0
       }

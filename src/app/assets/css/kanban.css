@@ -30,6 +30,18 @@
   text-decoration: none;
   color: #000;
 }
-.kanban-task-name{
+.kanban-task-container .kanban-task-name{
   max-width: calc(100% - 40px);
+}
+.kanban-task-container.Low{
+  border:1px solid #cdcdcd;
+}
+.kanban-task-container.Normal{
+  border:1px solid #000;
+}
+.kanban-task-container.High{
+  border:1px solid #eeee33;
+}
+.kanban-task-container.Emergency{
+  border:1px solid #ff2222;
 }
