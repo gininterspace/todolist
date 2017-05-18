@@ -46,13 +46,13 @@ export class TasksComponent implements OnInit{
         if(task.status == this.taskStatus.processing)
         {
           task.status = this.taskStatus.done;
-          this.taskService.update(task).then();
         }
         else
         {
           task.status = this.taskStatus.processing;
-          this.tasks[index] = task;
         }
+        this.taskService.update(task).then();
+        this.tasks[index] = task;
       }
       index++;
     }
