@@ -16,7 +16,6 @@ declare let $;
 export class TasksComponent implements OnInit{
   private tasks:Task[];
   private taskSelected;
-  private currentCSSClasses:{};
   private taskStatus;
   constructor(private taskService:TaskService){
     this.taskStatus = TaskStatusEnum;
@@ -24,7 +23,6 @@ export class TasksComponent implements OnInit{
   }
   ngOnInit():Promise<Task[]>{
     $(".kanban").hide();
-    this.setCSSClasses();
     return this.taskService.getTasks().then(tasks => this.tasks = tasks);
 
   }
@@ -33,11 +31,6 @@ export class TasksComponent implements OnInit{
   }
   taskClick(task:Task):void{
     this.taskSelected = task;
-  }
-  setCSSClasses():void{
-    this.currentCSSClasses = {
-      "task-list":true
-    };
   }
   changeStatus(task:Task):void{
     let index:number = 0;
