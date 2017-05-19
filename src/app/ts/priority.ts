@@ -1,6 +1,9 @@
 
 export enum TaskPriority{
-  "Emergency","High", "Normal", "Low"
+  Emergency,
+  High,
+  Normal,
+  Low
 }
 export const TaskPriorities: (number|string)[] = [
   TaskPriority[TaskPriority.Emergency],
@@ -8,7 +11,7 @@ export const TaskPriorities: (number|string)[] = [
   TaskPriority[TaskPriority.Normal],
   TaskPriority[TaskPriority.Low],
 
-]
+];
 
 
 
