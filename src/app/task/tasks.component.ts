@@ -27,7 +27,7 @@ export class TasksComponent implements OnInit{
 
   }
   toggleKanban(){
-    $(".kanban").toggle("300");
+    $(".kanban").toggle("blind");
   }
   taskClick(task:Task):void{
     this.taskSelected = task;
