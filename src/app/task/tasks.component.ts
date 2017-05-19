@@ -29,8 +29,8 @@ export class TasksComponent implements OnInit{
   }
   changeStatus(task:Task):void{
     let index:number = 0;
-    for (let t of this.tasks){
-      if(t===task){
+    for (index; index <this.tasks.length; index++){
+      if(this.tasks[index]===task){
         if(task.status == this.taskStatus.processing)
         {
           task.status = this.taskStatus.done;
@@ -42,7 +42,6 @@ export class TasksComponent implements OnInit{
         this.taskService.update(task).then();
         this.tasks[index] = task;
       }
-      index++;
     }
   }
 
