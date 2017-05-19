@@ -20,9 +20,8 @@ export class TasksComponent implements OnInit{
   constructor(private taskService:TaskService){
     this.taskStatus = TaskStatusEnum;
   }
-  ngOnInit():Promise<Task[]>{
-    return this.taskService.getTasks().then((tasks:Task[]) => this.tasks = tasks as Task[]);
-
+  ngOnInit():void{
+    this.taskService.getTasks().then((tasks:Task[]) => this.tasks = tasks as Task[]);
   }
   taskClick(task:Task):void{
     this.taskSelected = task;
