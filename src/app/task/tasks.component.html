@@ -6,7 +6,12 @@
             [class.selected]="task===taskSelected"
             [class.t-done]="task.status === taskStatus.done"
             (click)="taskClick(task)">
-        {{task.name}}<span class="fa t-delete fa-check" (click)="changeStatus(task)" [class.yellow]="task.status === taskStatus.processing" [class.green]="task.status === taskStatus.done" [class.red]="task.status === taskStatus.cancel"></span>
+        {{task.name}}
+        <span class="fa t-delete fa-check"
+              (click)="changeStatus(task)"
+              [ngClass]="{yellow:task.status === taskStatus.processing, green: task.status ===taskStatus.done, red: task.status ===taskStatus.cancel }" >
+
+        </span>
       </div>
       <div >
         <a class="task-btn" [routerLink]="['/add/']">Add Task</a>
