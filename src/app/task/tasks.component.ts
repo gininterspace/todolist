@@ -16,23 +16,16 @@ import {TaskStatusEnum} from "../ts/status";
 export class TasksComponent implements OnInit{
   private tasks:Task[];
   private taskSelected;
-  private currentCSSClasses:{};
   private taskStatus;
   constructor(private taskService:TaskService){
     this.taskStatus = TaskStatusEnum;
   }
   ngOnInit():Promise<Task[]>{
-    this.setCSSClasses();
     return this.taskService.getTasks().then(tasks => this.tasks = tasks);
 
   }
   taskClick(task:Task):void{
     this.taskSelected = task;
-  }
-  setCSSClasses():void{
-    this.currentCSSClasses = {
-      "task-list":true
-    };
   }
   changeStatus(task:Task):void{
     let index:number = 0;
