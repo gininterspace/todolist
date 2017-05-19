@@ -1,20 +1,20 @@
 <div class="task-detail form-group" >
   <h4>Adding Task </h4>
   <div class="task-row" id="priority" ><span class="task-header">Priority</span>
-    <select class="select-tag" [(ngModel)]="task_holder.priority" >
-      <option *ngFor="let index of priorities"  [ngValue]="priority_index[index]"  >{{index}}</option>
+    <select class="select-tag" [(ngModel)]="taskHolder.priority" >
+      <option *ngFor="let index of priorities"  [ngValue]="priorityIndex[index]"  >{{index}}</option>
     </select>
 
   </div>
   <div class="task-row"><span class="task-header">Assignee</span>
-    <select class="select-tag" [(ngModel)]="task_holder.assignee" >
+    <select class="select-tag" [(ngModel)]="taskHolder.assignee" >
       <option *ngFor="let index of assignee"  [ngValue]="assigneeEnum[index]"  >{{index}}</option>
     </select>
   </div>
-  <div class="task-row" id="name" ><span class="task-header">Name</span> <input [(ngModel)]="task_holder.name" class="form-control" placeholder="name" > </div>
-  <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea [(ngModel)]="task_holder.desc" class="form-control" placeholder="Description" ></textarea></div>
+  <div class="task-row" id="name" ><span class="task-header">Name</span> <input [(ngModel)]="taskHolder.name" class="form-control" placeholder="name" > </div>
+  <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea [(ngModel)]="taskHolder.desc" class="form-control" placeholder="Description" ></textarea></div>
   <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>
-    <input  [(ngModel)]="task_holder.deadline"  id="deadline_date_picker">
+    <input  [(ngModel)]="taskHolder.deadline"  id="deadline_date_picker">
   </div>
-  <div class="task-row" id="save" ><a class="task-btn" (click)="addTask(task_holder)">Save</a></div>
+  <div class="task-row" id="save" ><a class="task-btn" (click)="addTask(taskHolder)">Save</a></div>
 </div>

@@ -8,7 +8,7 @@ export enum TaskStatusEnum {
   review,
   done
 }
-export const TaskStatus:(string|number)[] = [
+export const TaskStatus:(string)[] = [
   TaskStatusEnum[TaskStatusEnum.cancel],
   TaskStatusEnum[TaskStatusEnum.waiting],
   TaskStatusEnum[TaskStatusEnum.processing],

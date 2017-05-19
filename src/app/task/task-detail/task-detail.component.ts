@@ -18,12 +18,11 @@ import {AssigneeService} from "../../services/assignee.service";
 
 
 export class TaskDetailComponent  implements OnInit{
-  @Input() task_selected : Task;
-  taskStatus = [];
-  taskPriority;
-  private priority_index;
-  private status = [];
-  private status_index;
+  @Input() taskSelected : Task;
+  private taskStatus = [];
+  private taskPriority;
+  private priorityIndex;
+  private statusIndex;
   private assignee;
   constructor(
     private taskService: TaskService,
@@ -33,11 +32,11 @@ export class TaskDetailComponent  implements OnInit{
   ){
     this.taskStatus = TaskStatus;
     this.taskPriority = TaskPriorities;
-    this.priority_index = TaskPriority;
-    this.status_index = TaskStatusEnum;
+    this.priorityIndex = TaskPriority;
+    this.statusIndex = TaskStatusEnum;
   }
   closeDetail(){
-      this.task_selected = null;
+      this.taskSelected = null;
   }
   ngOnInit():void{
   }
