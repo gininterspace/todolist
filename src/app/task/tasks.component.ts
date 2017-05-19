@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Task} from "./task";
 import {TaskService} from "../services/task.service";
 import {TaskStatusEnum} from "../ts/status";
+import enumerate = Reflect.enumerate;
 /**
  * Created by n_ngo on 2017/05/02.
  */
@@ -15,11 +16,9 @@ import {TaskStatusEnum} from "../ts/status";
 })
 export class TasksComponent implements OnInit{
   private tasks:Task[];
-  private taskSelected;
-  private taskStatus;
-  constructor(private taskService:TaskService){
-    this.taskStatus = TaskStatusEnum;
-  }
+  private taskSelected : Task;
+  private taskStatus = TaskStatusEnum;
+  constructor(private taskService:TaskService){}
   ngOnInit():void{
     this.taskService.getTasks().then((tasks:Task[]) => this.tasks = tasks as Task[]);
   }

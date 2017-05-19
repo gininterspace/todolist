@@ -17,24 +17,17 @@ import {TaskPriorities, TaskPriority} from "../../ts/priority";
 
 
 export class TaskDetailComponent  implements OnInit{
-  @Input() task_selected : Task;
-  taskStatus = [];
-  taskPriority;
-  private priority_index;
-  private status = [];
-  private status_index;
+  @Input() taskSelected : Task;
+  private taskStatus = TaskStatus;
+  private taskPriority = TaskPriorities;
+  private statusIndex = TaskStatusEnum;
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
     private location: Location,
-  ){
-    this.taskStatus = TaskStatus;
-    this.taskPriority = TaskPriorities;
-    this.priority_index = TaskPriority;
-    this.status_index = TaskStatusEnum;
-  }
+  ){}
   closeDetail(){
-      this.task_selected = null;
+      this.taskSelected = null;
   }
   ngOnInit():void{
   }

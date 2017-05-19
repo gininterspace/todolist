@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {Task} from "../task";
@@ -11,31 +11,22 @@ declare let $;
   templateUrl: "./task-add.component.html",
   styleUrls: ["../../assets/css/task-edit.component.css"]
 })
-export class TaskAddComponent implements OnInit{
+export class TaskAddComponent{
 
-  private task_holder: Task;
-  private priorities = [];
-  private priority_index;
-  private status = [];
-  private status_index;
+  private taskHolder: Task;
+  private priorities = TaskPriorities;
+  private priorityIndex = TaskPriority;
+  private statusIndex = TaskStatusEnum;
     constructor(private taskService:TaskService, private location: Location){
-      this.priorities = TaskPriorities;
-      this.priority_index = TaskPriority;
-      this.status = TaskStatus;
-      this.status_index = TaskStatusEnum;
-      this.task_holder = new Task;
-
+      this.taskHolder = new Task;
     }
-    ngOnInit(){
-    }
-
-    ngAfterViewChecked(){
+      ngAfterViewChecked(){
       $("#deadline_date_picker").datepicker();
     }
     addTask(data:Task){
       if(data.name)
       {
-        data.status = this.status_index.waiting;
+        data.status = this.statusIndex.waiting;
         data.created= Date.now();
         data.deadline = $("#deadline_date_picker").val();
         console.log(data);
