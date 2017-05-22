@@ -2,11 +2,9 @@ import {Component, OnInit} from "@angular/core";
 import {Task} from "./task";
 import {TaskService} from "../services/task.service";
 import {TaskStatusEnum} from "../ts/status";
-import enumerate = Reflect.enumerate;
 /**
  * Created by n_ngo on 2017/05/02.
  */
-declare let $;
 
 
 @Component({
@@ -21,10 +19,6 @@ export class TasksComponent implements OnInit{
   constructor(private taskService:TaskService){}
   ngOnInit():void{
     this.taskService.getTasks().then((tasks:Task[]) => this.tasks = tasks as Task[]);
-    $(".kanban").hide();
-  }
-  toggleKanban(){
-    $(".kanban").toggle("blind");
   }
   taskClick(task:Task):void{
     this.taskSelected = task;
