@@ -6,6 +6,7 @@ import {Task} from "../task";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {Location} from "@angular/common";
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 declare let $;
 
 @Component({
@@ -18,28 +19,32 @@ export class TaskEditComponent implements OnInit{
   private taskPriority = TaskPriorities;
   private priorityIndex = TaskPriority;
   private statusIndex = TaskStatusEnum;
+  deadlineDate: DateModel;
+  datePickerOptions: DatePickerOptions;
+
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
     private location: Location,
     private router: Router
-  ){}
+  ){
+    this.datePickerOptions = new DatePickerOptions();
+  }
 
   ngOnInit(){
     this.route.params.switchMap((params : Params)=>this.taskService.getTask(+params['id']) ).subscribe(task => {
       this.taskEditing = task
     });
-  }
-  // start up datepicker.
-  ngAfterViewChecked(){
-    $("#deadline_date_picker").datepicker({
-      altFormat: "yy-M-D"
-    });
+
+
   }
   save(){
     if(this.taskEditing.name)
     {
-      this.taskEditing.deadline = $("#deadline_date_picker").val(); // force to get deadline value from date-picker
+      if(this.deadlineDate)
+      {
+        this.taskEditing.deadline = new Date(this.deadlineDate.formatted).getTime();
+      }
       return this.taskService.update(this.taskEditing).then(() => this.goBack());
     }
   }

@@ -13,10 +13,9 @@ import {AppRoutingModule} from "./modules/app-routing.module";
 import {TasksComponent} from "./task/tasks.component";
 import {TaskService} from "./services/task.service";
 import {TaskDetailComponent} from "./task/task-detail/task-detail.component";
-import {TaskStatus} from "./ts/status";
 import {TaskEditComponent} from "./task/task-edit/task-edit.component";
 import {TaskAddComponent} from "./task/task-add/task-add.component";
-
+import { DatePickerModule } from 'ng2-datepicker';
 
 
 @NgModule({
@@ -25,7 +24,8 @@ import {TaskAddComponent} from "./task/task-add/task-add.component";
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    AppRoutingModule,
+    DatePickerModule
   ],
   declarations: [
     AppComponent,

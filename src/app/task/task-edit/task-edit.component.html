@@ -13,7 +13,7 @@
   <div class="task-row" id="name" ><span class="task-header">Name</span> <input class="form-control" [(ngModel)]="taskEditing.name" placeholder="name" > </div>
   <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea class="form-control" [(ngModel)]="taskEditing.desc" placeholder="Description" ></textarea></div>
   <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>
-    <input   id="deadline_date_picker" value="{{taskEditing.deadline | date}}">
+    <ng2-datepicker [options]="datePickerOptions" [(ngModel)]="deadlineDate"></ng2-datepicker>
   </div>
   <div class="task-row" id="save" ><a class="task-btn" (click)="save()">Save</a></div>
 </div>
