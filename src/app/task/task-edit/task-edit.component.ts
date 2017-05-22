@@ -6,6 +6,8 @@ import {Task} from "../task";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {Assignee, AssigneeArray} from "../../ts/assignee";
+import {Location} from "@angular/common";
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 declare let $;
 
 @Component({
@@ -14,43 +16,36 @@ declare let $;
 })
 export class TaskEditComponent implements OnInit{
   private taskEditing:Task;
-  private taskStatus = [];
-  private taskPriority = [];
-  private priorityIndex;
-  private statusIndex;
-  private assigneeData;
-  private assigneeEnum;
+  private assigneeData = AssigneeArray;
+  private assigneeEnum = Assignee;
+  private taskStatus = TaskStatus;
+  private taskPriority = TaskPriorities;
+  private priorityIndex = TaskPriority;
+  private statusIndex = TaskStatusEnum;
+  deadlineDate: DateModel;
+  datePickerOptions: DatePickerOptions;
+
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
     private router: Router
   ){
-    this.taskStatus = TaskStatus;
-    this.statusIndex = TaskStatusEnum;
-    this.taskPriority = TaskPriorities;
-    this.priorityIndex = TaskPriority;
-    this.assigneeData = AssigneeArray;
-    this.assigneeEnum = Assignee;
-
-
+    this.datePickerOptions = new DatePickerOptions();
   }
-
 
   ngOnInit(){
     this.route.params.switchMap((params : Params)=>this.taskService.getTask(+params['id']) ).subscribe(task => {
       this.taskEditing = task
     });
-  }
-  // start up datepicker.
-  ngAfterViewChecked(){
-    $("#deadline_date_picker").datepicker({
-      altFormat: "yy-M-D"
-    });
+
   }
   save(){
     if(this.taskEditing.name)
     {
-      this.taskEditing.deadline = $("#deadline_date_picker").val(); // force to get deadline value from date-picker
+      if(this.deadlineDate)
+      {
+        this.taskEditing.deadline = new Date(this.deadlineDate.formatted).getTime();
+      }
       return this.taskService.update(this.taskEditing).then(() => this.goBack());
     }
   }

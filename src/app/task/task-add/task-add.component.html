@@ -14,7 +14,7 @@
   <div class="task-row" id="name" ><span class="task-header">Name</span> <input [(ngModel)]="taskHolder.name" class="form-control" placeholder="name" > </div>
   <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea [(ngModel)]="taskHolder.desc" class="form-control" placeholder="Description" ></textarea></div>
   <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>
-    <input  [(ngModel)]="taskHolder.deadline"  id="deadline_date_picker">
+    <ng2-datepicker [options]="deadlineDateOptions" [(ngModel)]="deadlineDate"></ng2-datepicker>
   </div>
   <div class="task-row" id="save" ><a class="task-btn" (click)="addTask(taskHolder)">Save</a></div>
 </div>
