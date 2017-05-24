@@ -6,9 +6,7 @@ import {Task} from "../task";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
 import {Assignee, AssigneeArray} from "../../ts/assignee";
-import {Location} from "@angular/common";
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
-declare let $;
 
 @Component({
   templateUrl:"./task-edit.component.html",
@@ -35,7 +33,7 @@ export class TaskEditComponent implements OnInit{
 
   ngOnInit(){
     this.route.params.switchMap((params : Params)=>this.taskService.getTask(+params['id']) ).subscribe(task => {
-      this.taskEditing = task
+      this.taskEditing = task;
     });
 
   }

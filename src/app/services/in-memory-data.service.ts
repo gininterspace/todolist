@@ -14,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 1,
         status: 2,
-        assignee: 1
+        assignee: 2
       },
       {
         id: 2,
@@ -34,7 +34,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 3,
         status: 2,
-        assignee: 1
+        assignee: 2
       },
       {
         id: 4,
@@ -54,7 +54,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 1,
         status: 4,
-        assignee: 1
+        assignee: 2
       },
       {
         id: 6,
@@ -64,7 +64,7 @@ export class InMemoryDataService implements InMemoryDbService {
         deadline: Date.now(),
         priority: 2,
         status: 3,
-        assignee: 1
+        assignee: 2
       },
       {
         id: 7,

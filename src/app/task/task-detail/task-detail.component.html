@@ -8,5 +8,8 @@
   <div class="task-row" id="desc" ><span  class="task-header">Description</span> {{taskSelected.desc}}</div>
   <div class="task-row" id="created" ><span  class="task-header">Created</span> {{taskSelected.created | date}}</div>
   <div class="task-row" id="deadline" ><span  class="task-header">Deadline</span> {{taskSelected.deadline | date}}</div>
+  <div class="task-row" id="assignee" ><span  class="task-header">Assignee</span>
+    <img src="{{ assigneeInfo[taskSelected.assignee].img}}" title="{{assigneeInfo[taskSelected.assignee].name}}" alt="ten nguoi" width="40px">
+  </div>
   <div class="task-row" id="edit" > <a class="task-btn" [routerLink]="['edit/',taskSelected.id]"><span class="fa fa-pencil-square-o"></span></a></div>
 </div>
