@@ -3,53 +3,52 @@
     <div class="col-sm-3 kanban-wrapper">
       <h3>To do</h3>
       <div *ngFor="let task of data">
-        <div (click)="taskClick(task)" class="kanban-task-container {{priorityEnum[task.priority]}}"  *ngIf="task.status === taskStatus.waiting">
-          <span class="kb-left">  </span>
+        <div (click)="taskClick(task)" class=" nav kanban-task-container {{priorityEnum[task.priority]}}"  *ngIf="task.status === taskStatus.waiting">
           <a [routerLink]="['edit',task.id]" class="clear-link">
             <span class="kanban-task-name">{{task.name}}</span>
           </a>
           <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-          <span (click)="setStatus(task.id, taskStatus.processing)" class="kb-right">  </span>
+          <label (click)="setStatus(task.id, taskStatus.processing)"  class="next">&#x203a;</label>
         </div>
 
       </div>
     </div>
-    <div class="col-sm-3 kanban-wrapper">
+    <div class="col-sm-3 kanban-wrapper ">
       <h3>Doing</h3>
       <div *ngFor="let task of data">
-        <div (click)="taskClick(task)" class="kanban-task-container {{priorityEnum[task.priority]}}" *ngIf="task.status === taskStatus.processing">
-          <span class="kb-left" (click)="setStatus(task.id, taskStatus.waiting)">  </span>
+        <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" *ngIf="task.status === taskStatus.processing">
           <a [routerLink]="['edit',task.id]" class="clear-link">
             <span class="kanban-task-name">{{task.name}}</span>
           </a>
           <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-          <span (click)="setStatus(task.id, taskStatus.review)" class="kb-right">  </span>
+          <label (click)="setStatus(task.id, taskStatus.waiting)"  class="prev">&#x2039;</label>
+          <label (click)="setStatus(task.id, taskStatus.review)"  class="next">&#x203a;</label>
         </div>
       </div>
     </div>
     <div class="col-sm-3 kanban-wrapper">
       <h3>Reviewing</h3>
       <div *ngFor="let task of data">
-        <div (click)="taskClick(task)" class="kanban-task-container {{priorityEnum[task.priority]}}" *ngIf="task.status === taskStatus.review">
-          <span class="kb-left" (click)="setStatus(task.id, taskStatus.processing)">  </span>
+        <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" *ngIf="task.status === taskStatus.review">
           <a [routerLink]="['edit',task.id]" class="clear-link">
             <span class="kanban-task-name">{{task.name}}</span>
           </a>
           <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-          <span (click)="setStatus(task.id, taskStatus.done)" class="kb-right">  </span>
+          <label (click)="setStatus(task.id, taskStatus.processing)"  class="prev">&#x2039;</label>
+          <label (click)="setStatus(task.id, taskStatus.done)"  class="next">&#x203a;</label>
         </div>
       </div>
     </div>
     <div class="col-sm-3 kanban-wrapper">
       <h3>Done</h3>
       <div *ngFor="let task of data">
-        <div (click)="taskClick(task)" class="kanban-task-container {{priorityEnum[task.priority]}}" *ngIf="task.status === taskStatus.done">
+        <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" *ngIf="task.status === taskStatus.done">
           <span class="kb-left" (click)="setStatus(task.id, taskStatus.review)">  </span>
           <a [routerLink]="['edit',task.id]" class="clear-link">
             <span class="kanban-task-name">{{task.name}}</span>
           </a>
           <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-          <span class="kb-right">  </span>
+          <label (click)="setStatus(task.id, taskStatus.review)"  class="prev">&#x2039;</label>
         </div>
       </div>
     </div>
