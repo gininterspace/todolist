@@ -24,8 +24,7 @@ export class TasksComponent implements OnInit{
     this.taskSelected = task;
   }
   changeStatus(task:Task):void{
-    let index:number = 0;
-    for (index; index <this.tasks.length; index++){
+    for (let index:number = 0; index < this.tasks.length; index++){
       if(this.tasks[index]===task){
         if(task.status == this.taskStatus.processing)
         {
