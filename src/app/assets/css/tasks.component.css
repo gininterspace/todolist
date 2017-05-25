@@ -1,0 +1,60 @@
+.selected{
+  background-color: #dedede !important;
+  color: #fff !important;
+}
+.tasks-show{
+  margin-top: 20px;
+  padding:0;
+}
+.task-list{
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #dedede;
+  cursor: pointer;
+  padding:5px 10px;
+  margin: 1px 0;
+  text-transform: capitalize;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  -ms-transition: ease .3s;
+  -o-transition: ease .3s;
+  transition: ease .3s;
+}
+.task-list:hover{
+  background-color: #dedede;
+  color: #fff;
+}
+.t-delete{
+  float: right;
+  display: inline-block;
+}
+.t-done{
+  text-decoration: line-through;
+  color: #22dd88;
+  border: 1px solid #22dd88;
+}
+
+a.task-btn{
+  display: inline-block;
+  color: #dedede;
+  border:1px solid #dedede;
+  background: #000;
+  padding: 10px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+a.task-btn:hover{
+  background: #dedede;
+  color: #1d1d1d;
+  border:1px solid #1d1d1d;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  -ms-transition: ease .3s;
+  -o-transition: ease .3s;
+  transition: ease .3s;
+}
+@media screen and(max-width: 767px) {
+.task-detail{
+  padding: 0!important;
+}
+}

@@ -1,0 +1,19 @@
+<div class="task-detail form-group" *ngIf="taskEditing">
+  <h4>Task detail</h4>
+  <div class="task-row" id="status" ><span class="task-header">Status</span>
+    <select class="select-tag" [(ngModel)]="taskEditing.status">
+      <option *ngFor="let index of taskStatus" [ngValue]="statusIndex[index]">{{index}}</option>
+    </select>
+  </div>
+  <div class="task-row" id="priority" ><span class="task-header">Priority</span>
+    <select class="select-tag" [(ngModel)]="taskEditing.priority">
+      <option *ngFor="let index of taskPriority" [value]="priorityIndex[index]" >{{index}}</option>
+    </select>
+  </div>
+  <div class="task-row" id="name" ><span class="task-header">Name</span> <input class="form-control" [(ngModel)]="taskEditing.name" placeholder="name" > </div>
+  <div class="task-row" id="desc" ><span class="task-header">Description</span> <textarea class="form-control" [(ngModel)]="taskEditing.desc" placeholder="Description" ></textarea></div>
+  <div class="task-row" id="deadline" ><span class="task-header">Deadline</span>
+    <ng2-datepicker [options]="datePickerOptions" [(ngModel)]="deadlineDate"></ng2-datepicker>
+  </div>
+  <div class="task-row" id="save" ><a class="task-btn" (click)="save()">Save</a></div>
+</div>

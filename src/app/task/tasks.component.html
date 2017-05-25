@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="col-sm-6 tasks-show" >
+      <div  *ngFor="let task of tasks"
+            class="task-list task-status"
+            [class.selected]="task===taskSelected"
+            [class.t-done]="task.status === taskStatus.done"
+            (click)="taskClick(task)">
+        {{task.name}}
+        <span class="fa t-delete fa-check"
+              (click)="changeStatus(task)"
+              [ngClass]="{yellow:task.status === taskStatus.processing, green: task.status ===taskStatus.done, red: task.status ===taskStatus.cancel }" >
+
+        </span>
+      </div>
+      <div >
+        <a class="task-btn" [routerLink]="['/add/']">Add Task</a>
+      </div>
+    </div>
+    <div class="col-sm-6 task-detail">
+      <task-detail [taskSelected]="taskSelected"></task-detail>
+    </div>
+
+  </div>
+
+</div>
