@@ -19,9 +19,12 @@
 .kanban-task-container:hover{
   opacity: 0.7;
 }
+.kanban-task-container:hover .kb-right, .kanban-task-container:hover .kb-left{
+  opacity: 1;
+}
 .kanban-task-container img{
   position: absolute;
-  right: 1px;
+  left: calc(100% - 50px);
   top: 1px;
   width: 30px;
   height: 37px;
@@ -31,7 +34,9 @@
   color: #000;
 }
 .kanban-task-container .kanban-task-name{
-  max-width: calc(100% - 40px);
+  display: inline-block;
+  max-width: calc(100% - 50px);
+  margin-left: 10px;
 }
 .kanban-task-container.Low{
   border:1px solid #cdcdcd;
@@ -44,4 +49,27 @@
 }
 .kanban-task-container.Emergency{
   border:1px solid #ff2222;
+}
+.kb-right, .kb-left{
+  display: inline-block;
+  padding: 0 5px;
+  background-color: #99f;
+  color: #fff;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  vertical-align: middle;
+  width: 20px;
+  opacity: 0;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  -ms-transition: ease .3s;
+  -o-transition: ease .3s;
+  transition: ease .3s;
+}
+.kb-right{
+  right: 0;
+}
+.kb-left{
+  left: 0;
 }
