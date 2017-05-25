@@ -1,4 +1,4 @@
-<div class="task-detail form-group" *ngIf="taskSelected.data.id">
+<div  *ngIf="taskSelected.data" class="task-detail form-group {{priorityIndex[taskSelected.data.priority]}}">
   <span (click)="closeDetail()" class="close-task fa fa-times"></span>
   <h4>Task detail</h4>
   <div class="task-row" id="status" ><span  class="task-header">Status</span> <span [class.yellow]="taskSelected.data.status === statusIndex.processing" [class.green]="taskSelected.data.status === statusIndex.done" [class.red]="taskSelected.data.status === statusIndex.cancel">{{ taskStatus[taskSelected.data.status] }}</span></div>

@@ -8,3 +8,15 @@
 .red{
   color: #ee3355;
 }
+.Low{
+  border:1px solid #cdcdcd  !important;
+}
+.Normal{
+  border:1px solid #000 !important;
+}
+.High{
+  border:1px solid #eeee33 !important;
+}
+.Emergency{
+  border:1px solid #ff2222 !important;
+}

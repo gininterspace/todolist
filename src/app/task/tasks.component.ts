@@ -14,7 +14,7 @@ import {TaskStatusEnum} from "../ts/status";
 })
 export class TasksComponent implements OnInit{
   private tasks:Task[];
-  private taskSelected = {"data" : new Task()};
+  private taskSelected = {"data" : null};
   private taskStatus = TaskStatusEnum;
   constructor(private taskService:TaskService){}
   ngOnInit():void{
@@ -22,7 +22,6 @@ export class TasksComponent implements OnInit{
   }
   taskClick(task:Task):void{
     this.taskSelected.data = task;
-    console.log(this.taskSelected.data.assignee);
   }
   changeStatus(task:Task):void{
     for (let index:number = 0; index < this.tasks.length; index++){
