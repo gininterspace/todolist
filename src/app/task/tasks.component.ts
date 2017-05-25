@@ -14,14 +14,15 @@ import {TaskStatusEnum} from "../ts/status";
 })
 export class TasksComponent implements OnInit{
   private tasks:Task[];
-  private taskSelected : Task;
+  private taskSelected = {"data" : new Task()};
   private taskStatus = TaskStatusEnum;
   constructor(private taskService:TaskService){}
   ngOnInit():void{
     this.taskService.getTasks().then((tasks:Task[]) => this.tasks = tasks as Task[]);
   }
   taskClick(task:Task):void{
-    this.taskSelected = task;
+    this.taskSelected.data = task;
+    console.log(this.taskSelected.data.assignee);
   }
   changeStatus(task:Task):void{
     for (let index:number = 0; index < this.tasks.length; index++){

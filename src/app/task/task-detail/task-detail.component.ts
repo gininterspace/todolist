@@ -19,7 +19,7 @@ import {Assignee, AssigneeArray} from "../../ts/assignee";
 
 
 export class TaskDetailComponent  implements OnInit{
-  @Input() taskSelected : Task;
+  @Input() taskSelected ;
   private taskStatus = [];
   private taskPriority;
   private priorityIndex;
@@ -39,7 +39,7 @@ export class TaskDetailComponent  implements OnInit{
     this.statusIndex = TaskStatusEnum;
   }
   closeDetail(){
-      this.taskSelected = null;
+      this.taskSelected.data = null;
   }
   ngOnInit():void{
     this.assigneeService.getAssignees().then(asses => this.assigneeInfo = asses);
