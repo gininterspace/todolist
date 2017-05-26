@@ -59,3 +59,8 @@
 
 .nav .next { right: 0; }
 .nav .prev { left: 0; }
+.divider-assignees{
+  display: block;
+  border-bottom: 1px solid #efefef;
+  padding: 10px 0 2px 0;
+}
