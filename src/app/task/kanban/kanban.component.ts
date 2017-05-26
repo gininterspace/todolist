@@ -4,6 +4,7 @@ import {Task} from "../task";
 import {Assignee,  AssigneeArray} from "../../ts/assignee";
 import {TaskStatusEnum} from "../../ts/status";
 import {TaskPriority} from "../../ts/priority";
+import {TaskService} from "../../services/task.service";
 /**
  * Created by n_ngo on 2017/05/16.
  */
@@ -22,7 +23,7 @@ export class KanbanComponent implements OnInit{
   private assigneesData;
   private taskStatus = TaskStatusEnum;
   private priorityEnum = TaskPriority;
-  constructor(private assigneeService: AssigneeService){}
+  constructor(private assigneeService: AssigneeService, private taskService:TaskService){}
   ngOnInit(){
     return this.assigneeService.getAssignees().then(asses => this.assigneesData = asses);
   }
@@ -30,6 +31,7 @@ export class KanbanComponent implements OnInit{
     for (let index: number = 0; index < this.data.length; index ++){
       if(this.data[index].id === taskId){
         this.data[index].status = status;
+        return this.taskService.update(this.data[index]);
       }
     }
   }
