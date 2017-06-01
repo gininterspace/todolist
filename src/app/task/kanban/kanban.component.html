@@ -5,13 +5,13 @@
       <div *ngFor="let ass of assignees">
         <div *ngIf="ass">
           <div *ngFor="let task of data">
-            <div *ngIf="task.status === taskStatus.waiting && task.assignee == assigneesIndex[ass]" >
-              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" >
+            <div *ngIf="task.status === taskStatus.waiting && task.assignee == assigneesIndex[ass]">
+              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}">
                 <a [routerLink]="['edit',task.id]" class="clear-link">
                   <span class="kanban-task-name">{{task.name}}</span>
                 </a>
                 <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-                <label (click)="setStatus(task.id, taskStatus.processing)"  class="next">&#x203a;</label>
+                <label (click)="setStatus(task.id, taskStatus.processing)" class="next">&#x203a;</label>
               </div>
             </div>
           </div>
@@ -23,14 +23,14 @@
       <div *ngFor="let ass of assignees">
         <div *ngIf="ass">
           <div *ngFor="let task of data">
-            <div *ngIf="task.status === taskStatus.processing && task.assignee == assigneesIndex[ass]" >
-              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" >
+            <div *ngIf="task.status === taskStatus.processing && task.assignee == assigneesIndex[ass]">
+              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}">
                 <a [routerLink]="['edit',task.id]" class="clear-link">
                   <span class="kanban-task-name">{{task.name}}</span>
                 </a>
                 <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-                <label (click)="setStatus(task.id, taskStatus.waiting)"  class="prev">&#x2039;</label>
-                <label (click)="setStatus(task.id, taskStatus.review)"  class="next">&#x203a;</label>
+                <label (click)="setStatus(task.id, taskStatus.waiting)" class="prev">&#x2039;</label>
+                <label (click)="setStatus(task.id, taskStatus.review)" class="next">&#x203a;</label>
               </div>
             </div>
           </div>
@@ -43,14 +43,14 @@
       <div *ngFor="let ass of assignees">
         <div *ngIf="ass">
           <div *ngFor="let task of data">
-            <div *ngIf="task.status === taskStatus.review && task.assignee == assigneesIndex[ass]" >
-              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" >
+            <div *ngIf="task.status === taskStatus.review && task.assignee == assigneesIndex[ass]">
+              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}">
                 <a [routerLink]="['edit',task.id]" class="clear-link">
                   <span class="kanban-task-name">{{task.name}}</span>
                 </a>
                 <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-                <label (click)="setStatus(task.id, taskStatus.processing)"  class="prev">&#x2039;</label>
-                <label (click)="setStatus(task.id, taskStatus.done)"  class="next">&#x203a;</label>
+                <label (click)="setStatus(task.id, taskStatus.processing)" class="prev">&#x2039;</label>
+                <label (click)="setStatus(task.id, taskStatus.done)" class="next">&#x203a;</label>
               </div>
             </div>
           </div>
@@ -62,13 +62,13 @@
       <div *ngFor="let ass of assignees">
         <div *ngIf="ass">
           <div *ngFor="let task of data">
-            <div *ngIf="task.status === taskStatus.done && task.assignee == assigneesIndex[ass]" >
-              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}" >
+            <div *ngIf="task.status === taskStatus.done && task.assignee == assigneesIndex[ass]">
+              <div (click)="taskClick(task)" class="nav kanban-task-container {{priorityEnum[task.priority]}}">
                 <a [routerLink]="['edit',task.id]" class="clear-link">
                   <span class="kanban-task-name">{{task.name}}</span>
                 </a>
                 <img src="{{assigneesData[task.assignee].img}}" title="{{assigneesData[task.assignee].name}}" alt="ten nguoi">
-                <label (click)="setStatus(task.id, taskStatus.review)"  class="prev">&#x2039;</label>
+                <label (click)="setStatus(task.id, taskStatus.review)" class="prev">&#x2039;</label>
               </div>
             </div>
           </div>
