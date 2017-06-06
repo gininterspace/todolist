@@ -81,17 +81,17 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: "1",
         name: "Ngo Van Nguyen",
-        img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/747++%E3%82%B4%E3%83%BC%E3%83%B4%E3%82%A1%E3%83%B3+%E3%82%B0%E3%82%A3%E3%83%B3.JPG?uid=581&fid=716&mime=image%2Fjpeg&hash=&.JPG",
+        img: "https://d2v9k5u4v94ulw.cloudfront.net/small_light(dw=120,dh=120,da=s,ds=s,cw=120,ch=120,cc=FFFFFF)/assets/images/1648204/original/82dd34e3-a31d-4573-b2f9-4ab7aba914af.png?1495791312",
       },
       {
         id: "2",
         name: "Shimizu san",
-        img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/%E6%B8%85%E6%B0%B40685.jpg?uid=474&fid=545&mime=image%2Fjpeg&hash=&.jpg",
+        img: "https://graph.facebook.com/1171698564/picture?height=120&width=120",
       },
       {
         id: "3",
         name: "任 恩光",
-        img: "https://garoon.intra.interspace.ne.jp/cgi-bin/cbgrn/grn.exe/grn/file_download/-/%E4%BB%BB0600.jpg?uid=354&fid=376&mime=image%2Fjpeg&hash=&.jpg",
+        img: "https://d2v9k5u4v94ulw.cloudfront.net/small_light(dw=120,dh=120,da=s,ds=s,cw=120,ch=120,cc=FFFFFF)/assets/images/479166/original/c83ad8fd-4e43-48ce-9e10-d9b90d30ccaa.jpeg?1468628783",
       },
     ];
     return {tasks, assignees}
