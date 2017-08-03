@@ -17,10 +17,13 @@
         <a class="task-btn" [routerLink]="['/add/']">Add Task</a>
       </div>
     </div>
+
     <div class="col-sm-6 task-detail">
       <task-detail [taskSelected]="taskSelected"></task-detail>
     </div>
-
+  </div>
+  <div class="col-xs-12 kanban">
+    <kanban [data]="tasks" [taskSelected]="taskSelected" ></kanban>
   </div>
 
 </div>

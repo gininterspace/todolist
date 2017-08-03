@@ -2,15 +2,17 @@
  * Created by n_ngo on 2017/05/02.
  */
 export enum TaskStatusEnum {
-  done,
-  processing,
   cancel,
-  waiting
+  waiting,
+  processing,
+  review,
+  done
 }
 export const TaskStatus:(string)[] = [
-  TaskStatusEnum[TaskStatusEnum.done],
-  TaskStatusEnum[TaskStatusEnum.processing],
   TaskStatusEnum[TaskStatusEnum.cancel],
   TaskStatusEnum[TaskStatusEnum.waiting],
+  TaskStatusEnum[TaskStatusEnum.processing],
+  TaskStatusEnum[TaskStatusEnum.review],
+  TaskStatusEnum[TaskStatusEnum.done],
 ];
 

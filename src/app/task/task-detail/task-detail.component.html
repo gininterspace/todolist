@@ -1,12 +1,15 @@
-<div class="task-detail form-group" *ngIf="taskSelected">
+<div  *ngIf="taskSelected.data" class="task-detail form-group {{priorityIndex[taskSelected.data.priority]}}">
   <span (click)="closeDetail()" class="close-task fa fa-times"></span>
   <h4>Task detail</h4>
-  <div class="task-row" id="status" ><span  class="task-header">Status</span> <span [class.yellow]="taskSelected.status === statusIndex.processing" [class.green]="taskSelected.status === statusIndex.done" [class.red]="taskSelected.status === statusIndex.cancel">{{ taskStatus[taskSelected.status] }}</span></div>
-  <div class="task-row" id="priority" ><span  class="task-header">Priority</span> {{taskPriority[taskSelected.priority] }}</div>
-  <div class="task-row" id="id" ><span  class="task-header">Task Id</span> {{taskSelected.id}}</div>
-  <div class="task-row" id="name" ><span  class="task-header">Name</span> {{taskSelected.name}}</div>
-  <div class="task-row" id="desc" ><span  class="task-header">Description</span> {{taskSelected.desc}}</div>
-  <div class="task-row" id="created" ><span  class="task-header">Created</span> {{taskSelected.created | date}}</div>
-  <div class="task-row" id="deadline" ><span  class="task-header">Deadline</span> {{taskSelected.deadline | date}}</div>
-  <div class="task-row" id="edit" > <a class="task-btn" [routerLink]="['edit/',taskSelected.id]"><span class="fa fa-pencil-square-o"></span></a></div>
+  <div class="task-row" id="status" ><span  class="task-header">Status</span> <span [class.yellow]="taskSelected.data.status === statusIndex.processing" [class.green]="taskSelected.data.status === statusIndex.done" [class.red]="taskSelected.data.status === statusIndex.cancel">{{ taskStatus[taskSelected.data.status] }}</span></div>
+  <div class="task-row" id="priority" ><span  class="task-header">Priority</span> {{taskPriority[taskSelected.data.priority] }}</div>
+  <div class="task-row" id="id" ><span  class="task-header">Task Id</span> {{taskSelected.data.id}}</div>
+  <div class="task-row" id="name" ><span  class="task-header">Name</span> {{taskSelected.data.name}}</div>
+  <div class="task-row" id="desc" ><span  class="task-header">Description</span> {{taskSelected.data.desc}}</div>
+  <div class="task-row" id="created" ><span  class="task-header">Created</span> {{taskSelected.data.created | date}}</div>
+  <div class="task-row" id="deadline" ><span  class="task-header">Deadline</span> {{taskSelected.data.deadline | date}}</div>
+  <div class="task-row" id="assignee" ><span  class="task-header">Assignee</span>
+    <img src="{{ assigneeInfo[taskSelected.data.assignee].img}}" title="{{assigneeInfo[taskSelected.data.assignee].name}}" alt="ten nguoi" width="40px">
+  </div>
+  <div class="task-row" id="edit" > <a class="task-btn" [routerLink]="['edit/',taskSelected.data.id]"><span class="fa fa-pencil-square-o"></span></a></div>
 </div>

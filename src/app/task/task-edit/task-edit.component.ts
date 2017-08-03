@@ -5,9 +5,8 @@ import {TaskService} from "../../services/task.service";
 import {Task} from "../task";
 import {TaskPriorities, TaskPriority} from "../../ts/priority";
 import {TaskStatus, TaskStatusEnum} from "../../ts/status";
-import {Location} from "@angular/common";
+import {Assignee, AssigneeArray} from "../../ts/assignee";
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
-declare let $;
 
 @Component({
   templateUrl:"./task-edit.component.html",
@@ -15,6 +14,8 @@ declare let $;
 })
 export class TaskEditComponent implements OnInit{
   private taskEditing:Task;
+  private assigneeData = AssigneeArray;
+  private assigneeEnum = Assignee;
   private taskStatus = TaskStatus;
   private taskPriority = TaskPriorities;
   private priorityIndex = TaskPriority;
@@ -25,7 +26,6 @@ export class TaskEditComponent implements OnInit{
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
-    private location: Location,
     private router: Router
   ){
     this.datePickerOptions = new DatePickerOptions();
@@ -33,9 +33,9 @@ export class TaskEditComponent implements OnInit{
 
   ngOnInit(){
     this.route.params.switchMap((params : Params)=>this.taskService.getTask(+params['id']) ).subscribe(task => {
-      this.taskEditing = task
+      this.datePickerOptions.initialDate = new Date(task.deadline);
+        this.taskEditing = task;
     });
-
 
   }
   save(){
