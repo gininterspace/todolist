@@ -33,7 +33,8 @@ export class TaskEditComponent implements OnInit{
 
   ngOnInit(){
     this.route.params.switchMap((params : Params)=>this.taskService.getTask(+params['id']) ).subscribe(task => {
-      this.taskEditing = task;
+      this.datePickerOptions.initialDate = new Date(task.deadline);
+        this.taskEditing = task;
     });
 
   }
